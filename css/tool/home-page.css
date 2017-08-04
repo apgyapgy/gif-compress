@@ -1,0 +1,662 @@
+body{
+	margin: 0;
+	min-width: 1260px;
+	background: #000!important;
+	/*font-family: "PingFang SC";*/
+	/*font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;*/
+}
+figcaption{
+	margin: 0;
+	padding: 0;
+}
+figure{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+img{
+	border: none!important;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+span{
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+input{
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+a:hover{
+    text-decoration: none!important;
+    cursor: auto;
+}
+h1,h2,h3,h4,h5,p{
+	margin: 0;
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+*{
+	box-sizing: border-box;
+}
+img{
+	border: none;
+}
+.clearfix:after{
+	content: "";
+	height: 0;
+	display: block;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix{
+	zoom: 1;
+}
+*{
+	outline: none;
+}
+/*开始样式*/
+
+/*返回顶部开始*/
+#totop{
+	width: 74px;
+	height: 71px;
+	/*background: rgba(255,255,255,0.23);*/
+	background: url(http://soogif.com/images/img/img-home-page/Group1.png) no-repeat center;
+	position: fixed;
+	bottom: 123px;
+	right: 31px;
+	display: block;
+	display: none;
+	transition: all 1s;
+	transform: scale(0.7);
+	z-index: 600;
+}
+#totop:hover{
+	background: url(http://soogif.com/images/img/img-home-page/Group3.png) no-repeat center;
+}
+/*#backtop{
+	width: 60px;
+	height: 60px;
+	background: rgba(255,255,255,0.23);
+	position: fixed;
+	bottom: 65px;
+	right: 8px;
+	display: block;
+}*/
+/*返回顶部结束*/
+
+/*反馈开始*/
+#fedback{
+	width: 74px;
+	height: 60px;
+	background: url(http://soogif.com/images/img/img-home-page/Group2.png) no-repeat center;
+	bottom: 81px;
+	right: 31px;
+	position: fixed;
+	display: block;
+	display: none;
+	transform: scale(0.7);
+	z-index: 600;
+}
+#fedback:hover{
+	background: url(http://soogif.com/images/img/img-home-page/Group4.png) no-repeat center;
+}
+/*反馈开始*/
+
+/*轮播开始*/
+*{ 
+  	margin:0; padding:0; 
+}
+ img{ 
+  	display: block; border:none;
+}
+._problem{
+	z-index: 100;
+}
+.lubo{ 
+  	width: 100%;
+  	min-width:1000px;
+  	clear: both; 
+  	position: relative;
+  	height:250px;
+  	cursor: pointer;
+}
+.lubo_box{
+   	position: relative;
+    width: 100%; 
+    height:250px; 
+}
+.lubo_box li{
+	overflow: hidden;
+  	float: left;
+  	position: absolute;
+  	top: 0; 
+  	left: 0; 
+  	width: 100%; 
+  	height:250px; 
+  	opacity: 0;
+  	filter:alpha(opacity=0);
+}
+.lubo_box li a{
+   display: block;
+   width: 100%;  
+   height: 100%;
+}
+
+.lubo_box li img{
+   width: 100%; 
+   height: 100%;
+	object-fit: cover;
+}
+.lubo .lubo_box li #_kpo{
+	width: 100%
+	height: 100%;
+	object-fit: cover;
+}
+/*圆点*/
+.cir_box{
+   overflow: hidden; 
+   position: absolute; 
+   z-index: 100;
+}
+.cir_box li{
+   float: left; 
+   width: 30px; 
+   height: 5px; 
+   margin:0 5px; 
+   cursor: pointer; 
+   background: #fff; 
+   opacity: 0.8;
+   filter:alpha(opacity=80);
+}
+ul li.cir_on{
+	/*background: blue !important;*/
+	width: 25px;
+	/*width: 15px;
+	height: 15px;
+	border-radius: 6px;*/
+}
+
+  /*按钮*/
+.lubo_btn{
+   /*position: absolute; */
+   /*width: 100%;*/
+   /*top: 85px;*/
+}
+.cir_box{
+	bottom: -38px;
+}
+.lubo_btn{
+	padding: 0 200px;
+}
+.cir_box li{
+	border-radius: 50px;
+	width: 10px;
+	height: 10px;
+}
+.cir_box li:hover{
+	color: #03FDF4;
+	width: 25px;
+}
+.lubo:hover .left_btn{
+	opacity: 1;
+}
+.lubo:hover .right_btn{
+	opacity: 1;
+}
+.left_btn, .right_btn{
+	position: absolute;
+	top: 50%;
+	margin-top: -50px; 
+  	width: 40px; 
+  	height: 80px; 
+  	background: #000;
+  	opacity: 0.8;
+  	filter:alpha(opacity=80); 
+  	cursor: pointer; 
+  	color: #fff; 
+  	line-height: 80px; 
+  	font-size: 30px;
+  	text-align: center;
+  	-webkit-user-select:none;
+  	-moz-user-select:none;
+  	-ms-user-select:none;
+  	user-select:none;
+}
+.left_btn{
+   transition: all 1s;
+   left: 200px;
+   width: 40px;
+   height: 60px;
+   opacity: 0;
+   z-index: 10000;
+   /*display: none;*/
+   background: rgba(31,10,2,0.55) url(http://soogif.com/images/img/img-home-page/banner-left.png) no-repeat center!important;
+}
+.right_btn{ 
+	transition: all 1s;
+	width: 40px;
+    height: 60px;
+  	right: 200px;
+  	opacity: 0;
+  	/*display: none; */
+  	z-index: 10000;
+  	background: rgba(31,10,2,0.55) url(http://soogif.com/images/img/img-home-page/banner-right.png) no-repeat center!important;
+}
+.left_btn:hover{
+	background: rgba(31,10,2,0.55) url(http://soogif.com/images/img/img-home-page/ban-left.png) no-repeat center!important;
+}
+.right_btn:hover{
+	background: rgba(31,10,2,0.55) url(http://soogif.com/images/img/img-home-page/ban-right.png) no-repeat center!important;
+}
+.lubo .lubo_box li {
+	cursor: pointer;
+}
+/*轮播结束*/
+
+/*50px开始*/
+.bk{
+	width: 100%;
+	height: 50px;
+	background: #000;
+}
+/*50px结束*/
+
+/*tab切换开始*/
+.section-one{
+	/* position: relative; */
+	width: 100%;
+	height: 806px;
+	/*margin-top: 50px;*/
+	border-bottom: 3px solid #000;
+}
+.section-one .center{
+	width: 1200px;
+	height: 825px;
+	margin: 0 auto;
+	padding-top: 40px;
+}
+.section-one .center .center-p1{
+	width: 100%;
+	height: 68px;
+}
+.section-one .center .center-p2{
+	font-size: 12px;
+	color: #fff;
+	text-align: center;
+	line-height: 12px;
+	margin-top: 5px;
+	letter-spacing: 2px;
+}
+.section-one .center .tab{
+	margin-top: 40px;
+}
+.section-one .center .left{
+	float: left;
+	margin-left: 500px;
+}
+.section-one .center .right{
+	float: right;
+}
+.section-one .center .left a{
+	font-size: 15px;
+	color: #fff;
+	margin-right: 55px;
+	letter-spacing: 2.5px;
+}
+.section-one .center .left a:hover{
+	color: #03FDF4;
+}
+.section-one .center .left .first-one{
+	color: #03FDF4;
+}
+.section-one .center .right a{
+	font-size: 15px;
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+	color: #fff;
+	padding-right: 12px;
+	background: url(http://soogif.com/images/img/img-home-page/right.png) no-repeat right center;
+}
+.section-one .center .right a:hover{
+	color: #03FDF4;
+}
+.section-one .module{
+	margin-top: 40px;
+	position: relative;
+}
+.section-one .module .module-1{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.section-one .module .bo{
+	float: left;
+	display: block;
+	margin-right: 4px;
+}
+.section-one .module .bo:nth-child(4){
+	margin-right: 0;
+}
+.section-one .module .bo:nth-child(8){
+	margin-right: 0;
+}
+
+.section-one .module .top{
+	width: 297px;
+	height: 168px;
+	background: #2B92A8;
+
+}
+.section-one .module .top img{
+	object-fit: cover
+}
+.section-one .module .bottom{
+	width: 297px;
+	height: 60px;
+	background: rgba(0,0,0,0.4);
+	font-size: 24px;
+	color: #fff;
+	line-height: 60px;
+	text-align: center;
+	letter-spacing: 4px;
+}
+#_smallmore{
+	font-size: 20px;
+}
+.section-one .module .top-1{
+	background: rgba(0,0,0,0.76);
+	padding-top: 45px;
+	position: relative;
+}
+.i-1{
+	display: block;
+	width: 33px;
+	height: 33px;
+	background: url(http://soogif.com/images/img/img-home-page/content.png) no-repeat center;
+	position: absolute;
+	top: 146px;
+	right: 133px;
+}
+.section-one .module .bo .art-1{
+	font-size: 24px;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.section-one .module .bo .hx{
+	width: 105px;
+	height: 1px;
+	background: #666;
+	margin: 0 auto;
+}
+.section-one .module .bo .art-2{
+	margin-top: 14px;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+}
+.section-one .module .bo:hover .bottom{
+	background: #03FDF4;
+	color: #000;
+}
+.section-one .module .distances{
+	margin-bottom: 30px;
+}
+/*tab切换结束*/
+
+/*大的图片轮播开始*/
+.black{
+	width: 100%;
+	height: 100%;
+	background: #000;
+}
+#carousel-example-generic{
+	height: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+.item{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.carousel-control{
+	width: 50px;
+	height: 50px;
+}
+.ng-app{
+	width: 596px;
+	height: 368px;
+}
+.dd1{
+	background: #2B92A8;
+}
+.dd2{
+	background: #2B92A8;
+}
+.dd3{
+	background: #2B92A8;
+}
+.carousel-inner{
+	width: 100%;
+	height: 100%;
+}
+.carousel-inner>.item{
+	transition: transform 0s ease-in-out !important;
+	-webkit-transition:-webkit-transform 0s ease-in-out !important;
+}
+/*大的图片轮播开始*/
+
+/*瀑布流开始*/
+.rage .tiaozhuan{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.tiaozhuan:hover .shaow{
+	display: none;
+}
+.rage{
+	width: 1200px;
+	margin: 0 auto;
+	padding-top: 40px;
+}
+.rage .p-1{
+	width: 100%;
+	height: 72px;
+	margin-bottom: 30px;
+	background: url(http://soogif.com/images/img/img-home-page/article-2.png) no-repeat center;
+}
+.rage .p-2{
+	margin-top: 4px;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	line-height: 12px;
+	letter-spacing: 2px;
+	margin-bottom: 40px;
+}
+.rage .pic:hover .shaow{
+	display: block;
+}
+.T-show .shaow{
+	height: 34px;
+	background:-webkit-gradient(linear, 0% 0%, 0% 95%,from(rgba(0,0,0,0.005)), to(rgba(0,0,0,0.9)));
+	position: absolute;
+	bottom: 0;
+	color: #fff;
+	font-size: 14px;
+	line-height: 37px;
+	padding-left: 9px;
+	left: 0;
+	right: 0;
+	z-index: 300;
+	transition: all 1s;
+	opacity: 1;
+}
+.T-show ._bugload{
+	width: 30px;
+	height: 10px;
+	/*background: #03FDF4;*/
+	position: absolute;
+	bottom: 2px;
+	left: 0;
+	/*background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#000), to(#03FDF4));*/
+	background: -webkit-linear-gradient(left, rgba(33,173,168,0.5) , rgba(3,253,244,0.6));
+	border-radius: 5px;
+	/*display: none;*/
+	/*z-index: 6000;*/
+}
+figcaption{
+	float: left;
+	padding-right: 20px;
+}
+.i{
+	position: absolute;
+	display: block;
+	width: 98px;
+	height: 98px;
+	top: 8px;
+	right: 8px;
+	background: url(http://soogif.com/images/img/img-home-page/e-1.png) no-repeat center;
+}
+.tiaozhuan .shaow{
+	height: 47px;
+	background: rgba(0,0,0,0.2);
+	position: absolute;
+	bottom: 0;
+	color: #fff;
+	font-size: 20px;
+	line-height: 50px;
+	padding-left: 9px;
+	left: 0;
+	right: 0;
+	margin-right: -1px;
+}
+.grid {
+	/*background: #EEE;*/
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.grid-sizer,.grid-item {
+	width: 294px;
+}
+.grid-item {
+	height: 180px;
+	float: left;
+	background: #2B92A8;
+	/*background: #D26;*/
+	/*border-color: hsla(0, 0%, 0%, 0.5);*/
+	margin-bottom: 8px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.grid-item figure img{
+	transition: all 1s;
+	object-fit: cover;
+
+}
+.T-show figure img{
+	/*width: 100%;
+	height: 100%;*/
+}
+.grid-item figure:hover img{
+	transform: scale(1.1);
+}
+.grid-item--width2 {
+	width:  595px; 
+}
+.grid-item--height2 {
+	height: 368px;
+}
+/*瀑布流结束*/
+
+/*动画开始*/
+/*._loadback{
+	width: 100%;
+	height: auto;
+	background: red;
+}*/
+._load{
+	width: 1200px;
+	margin: 0 auto;
+	height: 20px;
+	position: relative;
+	overflow: hidden;
+	background: #000;
+	display: none;
+}
+.nide{
+	width: 200px;
+	height: 7px;
+	background: #03FDF4;
+	position: absolute;
+	left: 0;
+}
+.nide{
+	animation: load 2s linear infinite;
+}
+@keyframes load{
+	0%{
+		left: 0;
+	}
+	100%{
+		left: 1500px;
+	}
+}
+._bugload{
+	animation: _bugload 2s linear infinite;
+	display: none;
+}
+@keyframes _bugload{
+	0%{
+		left: 0;
+	}
+	100%{
+		left: 600px;
+	}
+}
+/*动画结束*/
+
+
+/*没有更多开始*/
+._nomore{
+	display: none;
+	width: 1200px;
+	height: 60px;
+	margin: 0 auto;
+	margin-bottom: 70px;
+	margin-top: 20px;
+}
+._nomore ._left{
+	float: left;
+	width: 500px;
+	height: 1px;
+	background: #fff;
+	margin-top: 15px;
+	opacity: 0;
+}
+._nomore ._center{
+	float: left;
+	font-size: 18px;
+	color: #979797;
+	margin-left: 55px;
+	padding-top: 15px;
+}
+._nomore ._right{
+	float: right;
+	width: 500px;
+	height: 1px;
+	background: #fff;
+	margin-top: 15px;
+	opacity: 0;
+}
+/*没有更多结束*/

@@ -1,0 +1,275 @@
+@charset "utf-8";
+/*主要内容*/
+.compressContent {
+	position:relative;
+	width  : 1030px;
+	margin:20px auto 0;
+	background:#2b2d37;
+	border-radius:4px;
+}
+.compressContent:before{
+	content:"";
+	position:absolute;
+	left:108px;
+	top:-30px;
+	border-top:16px solid transparent;
+	border-left:16px solid transparent;
+	border-right:16px solid transparent;
+	border-bottom:16px solid #2b2d37;
+}
+.PaddingSpace{
+	/*background:#000;*/
+}
+
+/*Tab*/
+.tabContainer {
+	width  : 600px;
+	height : 62px;
+	margin : 0 auto;
+	position : relative;
+	border: 1px solid #BEBEBE;
+	border-radius: 100px;
+}
+#tabMotionLabel{
+	margin-left:73px;
+} 
+.tabLabel {
+	float:left;
+	margin-left:64px;
+	margin-top:-2px;
+	height:54px;
+	font-size		: 24px;
+	line-height:54px;
+	color			: #fff;
+	letter-spacing: 2px;
+}
+.choose.active .tabLabel{
+	color          : #fff;
+}
+
+.tabSubLabel {
+	float:right;
+	margin-right:15px;
+	margin-top:-2px;
+	height:54px;
+	line-height:54px;
+	font-size		: 14px;
+	letter-spacing	: 0px;
+	color			: #fff;
+}
+
+#selectFrame {
+	border: 1px solid #57B0AF;
+	border-radius: 100px;
+}
+
+/* Drop Image */
+.DropImageLabel {
+	left:192px;
+	top:136px;
+	height:33px;
+	line-height:33px;
+	font-size		: 20px;
+	color			: #f6f2f2;
+	letter-spacing	: 1.6px;
+}
+
+.DropImageSublabel {
+	left:245px; 
+	top:179px;
+	font-size: 16px;
+	color: #999;
+	letter-spacing: 1.27px;
+}
+
+/*Processing List*/
+.processingListItem {
+	width  : 740px;
+	height : 36px;
+	margin : 9px auto 0;
+	background: #f0f0f0;
+	border: 1px solid #ddd;
+	border-radius: 100px;
+	position : relative;
+}
+
+.processingListItem .name {
+	position : absolute;
+	left : 18px;
+	top  : 0px;
+    max-width:100px;/*max-width : 70px;*/
+    height:36px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+	font-size: 16px;
+	line-height:36px;
+	color: #666;
+	letter-spacing: 0px;
+}
+
+.processingListItem .size {
+	position : absolute;
+	right : 542px;/*right : 574px;*/
+	top   : 0px;
+	height:36px;
+	font-size: 14px;
+	line-height:36px;
+	color: #12b4df;
+	letter-spacing: 0px;
+	text-align:right;
+}
+
+.processingListItem .finishedSize {
+	position : absolute;
+	left : 564px;/*left : 536px;*/
+	top  : 7px;
+	font-size: 14px;
+	color: #12B4DF;
+	letter-spacing: 0px;
+	cursor:pointer;
+}
+
+.processingListItem .seeButton {
+	position : absolute;
+	left : 660px;
+	top  : 10px;
+	width : 22px;
+	height : 15px;
+}
+
+.processingListItem .downloadButton {
+	position : absolute;
+	left : 688px;
+	top  : -1px;
+	height:36px;
+	line-height:36px;
+	font-size: 16px;
+	color: #666;
+	letter-spacing: 0px;
+	background:none;
+	border:0;
+}
+.processingListItem .downloadButton:hover{
+	color:#000;
+}
+
+.processingListItem .ProgressbarBack {
+	position : absolute;
+	left : 204px;/*left : 176px;*/
+	top  : 3px;
+	width		: 350px;
+	height		: 30px;
+	background: #FFFFFF;
+	/*border: 1px solid #BCBCBC;*/
+	border-radius: 100px;
+	box-sizing:border-box;
+}
+
+.processingListItem .progressBarTitle {
+	position : absolute;
+	left : 340px;/*left:314px;*/
+	top  : 5px;
+	font-size: 18px;
+	color: #fffcfc;
+	letter-spacing: 1.44px;
+	text-align:center;
+}
+.processingListItem .progressBarTitle span i{
+	position:absolute;
+	right:-30px;
+	top:-1;
+	width:24px;
+	height:100%;
+	background:url(/images/tool/complete.png) no-repeat center;
+	background-size:24px 21px;
+}
+
+.processingListItem .failReason {
+	position : absolute;
+	right : 19px;
+	top  : 5px;
+	font-size: 18px;
+	color: #40444F;
+	letter-spacing: 0px;
+	text-align:right;
+}
+
+.processingListItem .samplePic {
+	position : absolute;
+	left     : 620px;
+	bottom   : 35.5px;
+	display  : none;
+    max-width : 100px;
+    max-height: 100px;
+}
+
+/* Save And Share Content */
+#shareHint {
+	font-size		: 20px;
+	color			: #999;
+	letter-spacing	: 1.59px;
+	text-align 		: left;	
+}
+
+.ShareFriendText {
+	opacity			: 0.65;
+	font-size		: 18px;
+	color			: #f0f0f0;
+	letter-spacing	: 1.44px;	
+}
+
+.downloadWrap{
+	display:none;
+	position:relative;
+	margin:30px auto 30px;
+	width:1030px;
+	height:60px;
+	text-align:center;
+}
+.downloadWrap #downloadPicBtn{
+	position:absolute;
+	left:50%;
+	top:0;
+	margin-left:-180px;
+	width: 360px;
+	height: 50px;
+	background:#15cafa;
+	border-radius:4px;
+	border:none;
+	color:#fff;
+	font-size:22px;
+	line-height:50px;
+	letter-spacing:0px;
+	cursor:pointer;
+}
+#downloadPicLabel {
+	font-size: 36px;
+	color: #fff;
+	letter-spacing: 0px;
+}
+
+.autoPadding {
+	width : 10px;
+	height : 60px;
+}
+
+.ShareSaveButton {
+	position : absolute;
+	top		 : 57px;
+	width    : 100px;
+	height   : 25px;
+	border   : 0;
+	background : none;
+}
+
+/* For Submit Region Animation */
+@keyframes smallerSubmitRegionAnim {
+	from {transform : scale(   1,    1); top:0px;}
+	to   {transform : scale(0.7, 0.7); top:-40px;}
+}
+@keyframes ListUp {
+	from {top:0px;}
+	to   {top:-66px;}
+}
+

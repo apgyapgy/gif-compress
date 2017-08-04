@@ -1,0 +1,183 @@
+@charset "utf-8";/* CSS Document */
+/*翻页动画*/
+@-webkit-keyframes flipTop {
+	0% {-webkit-transform: perspective(400px) rotateX(0deg); }
+	100% {-webkit-transform: perspective(400px) rotateX(-90deg); } 
+}
+@-webkit-keyframes flipBottom {
+	0% {-webkit-transform: perspective(400px) rotateX(90deg); }
+	100% {-webkit-transform: perspective(400px) rotateX(0deg); } 
+}
+@-moz-keyframes flipTop {
+	0% {-moz-transform: perspective(400px) rotateX(0deg); }
+	100% {-moz-transform: perspective(400px) rotateX(-90deg); } 
+}
+@-moz-keyframes flipBottom {
+	0% {-moz-transform: perspective(400px) rotateX(90deg); }
+	100% {-moz-transform: perspective(400px) rotateX(0deg); } 
+}
+@-ms-keyframes flipTop {
+	0% {-ms-transform: perspective(400px) rotateX(0deg); }
+	100% {-ms-transform: perspective(400px) rotateX(-90deg); } 
+}
+@-ms-keyframes flipBottom {
+	0% {-ms-transform: perspective(400px) rotateX(90deg); }
+	100% {-ms-transform: perspective(400px) rotateX(0deg); } 
+}
+@-keyframes flipTop {
+	0% {transform: perspective(400px) rotateX(0deg); }
+	100% {transform: perspective(400px) rotateX(-90deg); } 
+}
+@-keyframes flipBottom {
+	0% {transform: perspective(400px) rotateX(90deg); }
+	100% {transform: perspective(400px) rotateX(0deg); }
+}
+
+.dataStatistics {
+	color: #fff;
+	font-size:26px;
+	line-height:40px;
+	width:350px;
+	height:40px;
+	margin: 0 auto;
+	position:relative;
+	z-index:0;
+}
+.dataStatistics img{
+	position:absolute;
+	width:4px;
+	height:9px;
+}
+.dataStatistics img:nth-of-type(1){
+	left:111px;
+	top:30px;
+}
+.dataStatistics img:nth-of-type(2){
+	left:233px;
+	top:30px;
+}
+
+.dataStatistics .seperator {
+	vertical-align: top;
+	margin: 0 -20px;
+	display: inline; 
+}
+.dataStatistics .seconds,
+.dataStatistics .minutes,
+.dataStatistics .hours,
+.dataStatistics .days {
+	height: 100%;
+	display: inline; 
+}
+.dataStatistics .digit_set { 
+	float: left;
+	width: 30px;
+	height: 100%;
+	display: inline-block;
+	position: relative;
+	margin-right:8px; 
+	text-align:center;
+}
+.dataStatistics .digit_set:nth-of-type(3),.dataStatistics .digit_set:nth-of-type(6){
+	margin-right:16px;
+}
+.dataStatistics .digit_set.set_last{
+	margin-right:0;
+}
+.dataStatistics .digit {
+	position: absolute;
+	height: 100%; 
+}
+.dataStatistics .digit > div {
+	position: absolute;
+	left: 0;
+	overflow: hidden;
+	height: 50%;
+	width: 30px;
+	padding: 0px; 
+}
+
+.dataStatistics .digit > div.digit_top, 
+.dataStatistics .digit > div.shadow_top { 
+	width: 30px;
+	background-color: #57B0AF;
+	border-bottom: 1px solid #57B0AF;
+	box-sizing: border-box;
+	top: 0;
+	z-index: 0;
+}
+.dataStatistics .digit > div.digit_top:before, 
+.dataStatistics .digit > div.shadow_top:before {
+	content: "";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0; 
+}
+.dataStatistics .digit > div.shadow_top {
+	width: 30px;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s ease-in; 
+}
+.dataStatistics .digit > div.digit_bottom, 
+.dataStatistics .digit > div.shadow_bottom {
+	background-color: #57B0AF;
+	bottom: 0;
+	z-index: 0;
+}
+.dataStatistics .digit > div.digit_bottom .digit_wrap, 
+.dataStatistics .digit > div.shadow_bottom .digit_wrap {
+	display: block;
+	margin-top: -65%; 
+}
+.dataStatistics .digit > div.digit_bottom:before, 
+.dataStatistics .digit > div.shadow_bottom:before {
+	content: "";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0; 
+}
+.digit_wrap{
+	line-height: 40px; 
+	display: block; 
+	overflow: hidden;
+}
+.dataStatistics .digit > div.shadow_bottom {
+	opacity: 0;
+	-webkit-transition: opacity 0.3s ease-in; 
+}
+.dataStatistics .digit.previous .digit_top,
+.dataStatistics .digit.previous .shadow_top {
+	opacity: 1;
+	z-index: 2;
+	-webkit-transform-origin: 50% 100%;
+	-webkit-animation: flipTop 0.3s ease-in both;
+	-moz-transform-origin: 50% 100%;
+	-moz-animation: flipTop 0.3s ease-in both;
+	-ms-transform-origin: 50% 100%;
+	-ms-animation: flipTop 0.3s ease-in both; 
+	transform-origin: 50% 100%;
+	animation: flipTop 0.3s ease-in both;
+}
+.dataStatistics .digit.previous .digit_bottom,
+.dataStatistics .digit.previous .shadow_bottom {
+	z-index: 1;
+	opacity: 1; 
+}
+.dataStatistics .digit.active .digit_top {
+	z-index: 1; 
+}
+.dataStatistics .digit.active .digit_bottom {
+	z-index: 2;
+	-webkit-transform-origin: 50% 0%;
+	-webkit-animation: flipBottom 0.3s 0.3s ease-out both;
+	-moz-transform-origin: 50% 0%;
+	-moz-animation: flipBottom 0.3s 0.3s ease-out both;
+	-ms-transform-origin: 50% 0%;
+	-ms-animation: flipBottom 0.3s 0.3s ease-out both;
+	transform-origin: 50% 0%;
+	animation: flipBottom 0.3s 0.3s ease-out both;
+}

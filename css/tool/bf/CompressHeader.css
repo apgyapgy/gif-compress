@@ -1,0 +1,8 @@
+/*导航开始*/
+.compressHead {
+	width  : 100%;
+	height : 244px;
+	background : url(/images/tool/background_head.png) center;
+	background-size      : 100% 244px;
+	background-repeat    : no-repeat;
+}

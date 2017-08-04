@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		    var oldHeight = 0;
+		    t && clearInterval(t);
+		    
+		    var t = window.setInterval(function(){
+		        var height = location.href.split('#')[1];
+		        if(height && height != oldHeight) {
+		            oldHeight = height;
+		            if(window.parent.parent.getIfrData) {
+		                window.parent.parent.getIfrData(oldHeight);
+		            }
+		        }
+		    },200);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

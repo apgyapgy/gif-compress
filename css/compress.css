@@ -1,0 +1,80 @@
+body,input {
+	/*font-family:"PingFang SC","Microsoft YaHei";*/
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+
+figure,ul {
+	margin: 0;
+	padding: 0
+}
+
+figure,img {
+	border: none
+}
+
+body {
+	margin: 0;
+	min-width: 1260px;
+	background: #000;
+}
+
+ul {
+	list-style: none
+}
+
+a {
+	text-decoration: none
+}
+
+h1,h2,h3,h4,h5,p {
+	margin: 0
+}
+
+* {
+	box-sizing: border-box;
+	outline: 0
+}
+
+.clearfix:after {
+	content: "";
+	height: 0;
+	display: block;
+	clear: both;
+	visibility: hidden
+}
+
+.clearfix {
+	zoom: 1
+}
+
+.grid-item--width2 figure img {
+	width: 100%!important;
+	height: 100%!important
+}
+
+figure {
+	width: 100%;
+	height: 100%;
+	position: relative
+}
+
+.nav .a-1 {
+	color: #fff!important
+}
+
+.nav .a-3 {
+	color: #03FDF4!important
+}
+.nav .center .tools{
+	width:405px!important;
+}
+#preview{
+	display:none;
+	position:fixed;
+	left:50%;
+	top:50%;
+	-webkit-transform: translate(-50%,-50%) scale(0.6,0.6);
+	-moz-transform: translate(-50%,-50%) scale(0.6,0.6);
+	-ms-transform: translate(-50%,-50%) scale(0.6,0.6);
+	transform: translate(-50%,-50%) scale(0.6,0.6);
+}

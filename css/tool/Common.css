@@ -1,0 +1,167 @@
+@charset "utf-8";
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,img,button,input,figure,figcaption{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	outline : none;
+}
+html,body{
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+body{
+	/*margin:0 auto;*/
+	/*width:1200px;*/
+	/*height:100%;*/
+	background: transparent;
+	/*background:url(/images/tool/back.png);*/
+	/*background:url(/images/tool/background_new.jpg);*/
+	/*background-attachment:fixed;*/
+}
+*{
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+ /*@font-face {font-family:PingFang SC; src: url("font/xxxx.ttf")}*/  
+a,a:link,a:visited,a:hover,a:active{
+	text-decoration: none;
+}
+.clear{
+	zoom:1;
+}
+.clear:after{
+	content:"";
+	display:block;
+	height:0;
+	overflow:hidden;
+	visibility: hidden;
+	clear:both;
+}
+/* @font-face {font-family:PingFangSC-Medium; src: url("font/xxxx.ttf")}  */
+
+/* For Div*/
+.CenterContainer {
+	/* width must set */
+	height   : auto;
+	margin   : 0 auto;
+	position : relative;
+}
+
+
+.SettedPos {
+	position : absolute;
+	top		 : 0;
+}
+
+.choose{
+	position:relative;
+	float:left;
+	margin-left:28px;
+	width:227px;
+	height:54px;
+	background:#505259;
+	border:0;
+	border:2px solid #505259;
+	box-sizing:border-box;
+	border-radius:80px;
+}
+.choose#tabWechat{
+	margin-left:0;
+}
+.choose span{
+	position:absolute;
+	left:0;
+	top:0;
+	margin-top:-2px;
+	width:64px;
+	height:55px;
+	/*border-radius:50%;*/
+}
+.choose span#tabWechatIcon{
+	background:url(../../images/tool/tab_wechat_disable_n.png) no-repeat 22px center;
+	background-size:36px auto;
+}
+.choose span#tabMotionIcon{
+	background:url(../../images/tool/tab_motion_disable_n.png) no-repeat 28px center;
+	background-size:33px 33px;
+}
+.choose span#tabCustomIcon{
+	background:url(../../images/tool/tab_custom_disable_n.png) no-repeat 20px center;
+	background-size:31px 31px;
+}
+.choose.active{
+	border:2px solid #12b4df;
+}
+.PaddingSpace {
+	width  : 100%;
+	/* height must set */
+}
+
+
+.AnimItem {
+	animation-duration	: 0.5s;
+	animation-fill-mode : forwards;
+}
+
+.CenterContainer .dragIcon{
+	left:318px;
+	top:35px;
+	width:88px;
+	height:85px;
+	
+}
+
+/* For Text */
+.FontMedium {
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+
+p {
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+
+/* Progress Bar */
+@keyframes barberpole {
+	from { background-position: 0%    0%; }
+	to   { background-position: 326px 0%;}
+}
+
+.CompressProgressBar {
+	height : 30px;
+	background-size : 350px 100%;
+	max-width: 350px;
+	transition	: width 0.01s ease-in-out;
+	animation	: barberpole 12s linear infinite;
+	border-radius: 100px;
+	position : absolute;
+	left:204px;/*left:176px;*/
+	top:3px;
+	/*left : 206px;top  : 5px;*/
+}
+
+.CompressProgressBar.Upload {
+	background-image: repeating-linear-gradient(-61deg, #5763b0, #5763b0 7px, #6791DE 7px, #6791DE 18px);
+}
+
+.CompressProgressBar.Compressing {
+	background-image: repeating-linear-gradient(-61deg, #57b0af, #57b0af 7px, #69E5E3 7px, #69E5E3 18px);
+}
+
+.CompressProgressBar.Compressdone {
+	background-color : #12b4df;
+	border-radius: 100px;
+}
+
+.CompressProgressBar.Error {
+	background-color : #B45151;
+	border-radius:100px;
+}
+
+.HideItems {
+	 display : none;
+}

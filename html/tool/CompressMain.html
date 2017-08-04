@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+	<title>GIF压缩工具_GIF制作工具_GIF裁剪工具_GIF水印工具_SOOGIF</title>
+	<meta name="keywords" content="GIF动图压缩工具,GIF动图制作工具,GIF动图水印工具,GIF动图裁剪工具,GIF格式转换工具"/>
+	<meta name="description" content="SOOGIF，GIF动图中文搜索引擎，最好的GIF动图素材和GIF在线制作工具，提供丰富的 GIF素材，动图素材，动态图片下载，表情包下载，斗图必备表情包，微信公众号、微博编辑必备 GIF素材"/>
+
+	<link rel="stylesheet" href="/css/tool/bootstrap.min.css"/>
+	<link rel="stylesheet" href="/css/tool/Common.css"/>
+	<link rel="stylesheet" href="/css/tool/toolHeader.css"/>
+	<link rel="stylesheet" href="/css/tool/CompressMainContent.css"/>
+	<link rel="stylesheet" href="/css/tool/CompressFoot.css"/>
+	<link rel="stylesheet" href="/css/tool/PopPage.css"/>
+	<!--<link rel="stylesheet" href="/css/tool/style.css" />-->
+
+	<script type="text/javascript" src="/js/tool/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/js/tool/gifCompressPage.js"></script>
+    <!--<script type="text/javascript" src="/js/tool/jquery.dataStatistics.js"></script>-->
+    <!--<script type="text/javascript" src="/js/tool/background.js"></script>-->
+
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?37c68c083c2c85fe183a5e0224eb35a9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+</head>
+
+<body>
+	<!--<iframe id="iframe" src="http://114.215.17.203/html/tool/compress.html" width="0" height="0" frameborder></iframe>-->
+	<!--<iframe id="iframe" src="http://www.soogif.com/html/tool/compress.html" width="0" height="0" frameborder></iframe>-->
+	<!--<iframe id="iframe" src="http://localhost:8080/html/tool/compress.html" style="display:none;" width="0" height="0" frameborder></iframe>-->
+	<!-- Main Content -->
+	<!--<canvas style="position:fixed;left:0;top:0;"></canvas>-->
+	<div class = "compressContent clear">
+		<div class="PaddingSpace"    style="height:25px;"></div> 
+
+		<!-- Tab Select -->
+		<div class="CenterContainer" style="width:738px; height:20px;"><p class="FontMedium" style="font-size:20px; color:#fff; letter-spacing:1.6px;">选择压缩尺寸</p></div>
+		<div class="PaddingSpace"    style="height:30px;"></div>
+
+		<div class="CenterContainer" style="width:738px; height:72px;">
+			<!--<div class="SettedPos" id="selectFrame" style="width:210px; height:62px; left:0px; top:-1px">
+			</div>-->
+			<button class="choose active" id="tabWechat" onclick="onClickTabWeixin()">
+				<span class="SettedPos"  id="tabWechatIcon" ></span>
+				<p   class="SettedPos tabLabel" id="tabWechatLabel">&lt;2M</p>
+				<p   class="tabSubLabel" id="tabWechatSubLabel">微信公众号</p>	
+			</button>
+			<button class="choose" id="tabMotion" onclick="onClickTabMotion()">
+				<span class="SettedPos"  id="tabMotionIcon"></span>
+				<p   class="SettedPos tabLabel"    id="tabMotionLabel">&lt;1M</p>
+				<p   class="tabSubLabel" id="tabMotionSubLabel">表情类</p>
+			</button>
+			<button class="choose" id="tabCustom"  onclick="onClickTabCustom()">
+				<span class="SettedPos" id="tabCustomIcon"  src="/images/tool/tab_custom_disable.png"></span>
+				<p   class="SettedPos tabLabel"    id="tabCustomLabel" >自定义</p>
+				<p   class="tabSubLabel" id="tabCustomSubLabel">自由定义</p>
+			</button>
+		</div>
+
+		<div class="PaddingSpace" style="height:18px;"></div>
+
+		<!-- Select Image -->
+ 		<div class="CenterContainer" style="width:738px; height:244px;  cursor:pointer">
+			<div  class="CenterContainer AnimItem" id="selectImgBtn" style="width:738px; height:244px; left:0px; top:0px; border-radius: 19px; background:url(/images/tool/border.png) no-repeat center;background-size:738px 244px;box-sizing: border-box;">
+				<img class="SettedPos dragIcon" src="/images/tool/icon_download.png"/>
+				<p   class="SettedPos DropImageLabel" >直接拖拽gif到此，或者点击上传按钮</p>
+				<p   class="SettedPos DropImageSublabel" style="">可多个上传，单个大小不&gt;20MB</p>
+				<span><input type="file" id="SelectFiles" accept="image/gif" class="Set   tedPos" style="cursor:pointer; opacity: 0; width:738px; height:244px; left:0px; top:0px; font-size: 0px;" multiple onchange="SelectFile()"/></span>
+			</div>
+ 		</div>
+
+		<!-- Process Bars -->
+		<!--<div class="PaddingSpace" style="height:20px;" id="selectImagePadding"></div>-->
+		
+		<div class="CenterContainer" style="width:738px;">
+ 			<div class="CenterContainer AnimItem" id="CompressListContainer" style="width:738px;border-radius:3px;display:none;">
+				<div class="PaddingSpace" style="height:12px;"></div>
+				<ul id="compressListParent">
+				</ul>
+			</div>
+		</div>
+
+		<!-- Padding: 动态调整，使得foot可以在没有 progress 的情况下居于底部 -->	
+		<div class="autoPadding"  id="autoPaddingHelper">
+		</div>
+	</div>
+	<div class="downloadWrap">
+		<button id="downloadPicBtn" onclick="downloadZip()">打包下载</button>
+	</div>
+	
+	<div class = "compressFoot">
+		<div class="nums">
+			<div class="number num9">0</div>
+			<div class="number num8">0</div>
+			<div class="number num7">0</div>
+			<div class="number num6">0</div>
+			<div class="number num5">0</div>
+			<div class="number num4">0</div>
+			<div class="number num3">0</div>
+			<div class="number num2">0</div>
+			<div class="number num1">0</div>
+			<img class="dott1" src="/images/tool/icon_coma.png"/>
+			<img class="dott2" src="/images/tool/icon_coma.png"/>
+		</div>
+		<p id="numberLabel">已压缩动图数量</p>
+	</div>
+	
+	
+	<!-- Share Page -->
+	<!-- Caution : DO NOt Delete this -->
+ 	<div id="block_overlay" class="block_overlay"  style="display:none"></div>
+	
+ 	<!--<div class="PopPage" id="PopPageShare" style="position:fixed;top:0;left:0;display:none;bottom:0;"> 
+		<!--<div class="PaddingSpace" style="height:125px;" id="PaddingSpaceShare"></div>
+		<div class="CenterContainer" style="position:fixed;left:50%;bottom:130px;margin-left:-226px;width:452px; height:457px;" id="PopPageShareContainer">
+			<img class="SettedPos" style="left:49px; top:56px;" src="/images/tool/icon_savepage_big.png"/>
+			<p   class="SettedPos PopPageShareText" style="left:94px; top:60px;">收藏我们</p>
+			<p   class="SettedPos PopPageShareTextBig" style="left:90px; top:119px;">如果您的浏览器不支持自动收藏</p>
+			<div class="SettedPos" style="left:91px; top:153px; width:268px; height:47px; border: 1px solid #E2E2E2; border-radius: 4px;"></div>
+			<p   class="SettedPos PopPageShareTextVeryBig" style="left:132px; top:160px;">请按<span style='color:#57B0AF;'>ctrl+D</span>收藏</p>
+			<img class="SettedPos" style="left:49px;top:259px;" src="/images/tool/icon_sharefriend_big.png"/>
+			<p   class="SettedPos PopPageShareText" style="left:99px;top:266px;" id="shareLabel">告诉朋友</p>
+			
+			<div><a href="#" class="jiathis_button_weixin">
+				<button class="PopPageShareButton" style="left:49px;" id="shareToWechatBtn">
+					<p  class="PopPageShareButtonLabel">微信</p>
+				</button>
+			</a></div>
+			
+			<div><a href="#" class="jiathis_button_tsina">
+				<button class="PopPageShareButton" style="left:146px;" id="shareToWeboBtn">
+					<p  class="PopPageShareButtonLabel">微博</p>
+				</button>
+			</a></div>
+			
+			<div><a href="#" class="jiathis_button_cqq">
+				<button class="PopPageShareButton" style="left:243px; " id="shareToQQBtn">
+					<p  class="PopPageShareButtonLabel">QQ</p>
+				</button>
+			</a></div>
+			
+			<div><a href="#" class="jiathis_button_qzone">
+				<button class="PopPageShareButton" style="left:340px;" id="shareToQZoneBtn">
+					<p  class="PopPageShareButtonLabel">空间</p>
+				</button>
+			</a></div>
+			
+			<button class="SettedPos PopCloseBtn" style="left:408px; top:25px;" onclick="closeSharePop()">
+            </button>
+ 			<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+		</div>
+	</div>-->
+
+	<!-- Param Adjustment -->
+	<div  class="PopPage" id="PopPageCustom" style="position:fixed;top:0;left:0;display:none;bottom:0;">
+        <!--<div class="PaddingSpace" style="height:50px;" id="PaddingSpaceCustom"></div>-->
+        <div class="CenterContainer" style="width:380px; height:360px;" id="PopPageCustomContainer">
+            <button class="SettedPos PopCloseBtn" style="left:343px; top:19px;" id="PopCustomCloseBtn" onclick="closeCustomPanel()">
+            </button>
+            <p  class="PopPageCustomTitle">自定义gif参数</p>
+			<button class="PopPageCutomButton" style="left: 68px; top:127px;" id="Custom200KBtn" onclick="customSelect('Custom200KBtn')">
+				<p  class="PopPageCustomButtonLabel">200K</p>
+			</button>
+			<button class="PopPageCutomButton" style="left:208px; top:127px;" id="Custom500KBtn" onclick="customSelect('Custom500KBtn')">
+				<p  class="PopPageCustomButtonLabel">500K</p>
+			</button>
+			<button class="PopPageCutomButton" style="left: 68px; top:187px;" id="Custom3MBtn" onclick="customSelect('Custom3MBtn')">
+				<p  class="PopPageCustomButtonLabel" style="left:33px;">3M</p>
+			</button>
+			<button class="PopPageCutomButton" style="left:208px; top:187px;" id="Custom5MBtn" onclick="customSelect('Custom5MBtn')">
+				<p  class="PopPageCustomButtonLabel" style="left:33px;">5M</p>
+			</button>
+
+			<button id="PopCustomConfirmBtn" onclick="confirmCustom()">
+				<p  class="PopCustomConfirmBtnLabel">确定</p>
+			</button>
+        </div>
+	</div>
+</body>
+</html>

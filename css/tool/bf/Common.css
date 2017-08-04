@@ -1,0 +1,88 @@
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	outline : none;
+}
+
+/* @font-face {font-family:PingFangSC-Medium; src: url("font/xxxx.ttf")}  */
+
+/* For Div*/
+.CenterContainer {
+	/* width must set */
+	height   : auto;
+	margin   : 0 auto;
+	position : relative;
+}
+
+
+.SettedPos {
+	position : absolute;
+	top		 : 0;
+}
+
+
+.PaddingSpace {
+	width  : 100%;
+	/* height must set */
+}
+
+
+.AnimItem {
+	animation-duration	: 0.5s;
+	animation-fill-mode : forwards;
+}
+
+
+/* For Text */
+.FontMedium {
+	font-family	: "微软雅黑";
+}
+
+p {
+	font-family	: "微软雅黑";
+}
+
+/* Progress Bar */
+@keyframes barberpole {
+	from { background-position: 0%    0%; }
+	to   { background-position: 326px 0%;}
+}
+
+.CompressProgressBar {
+	height : 18px;
+	background-size : 324px 100%;
+	max-width: 326px;
+	
+	transition	: width 0.01s ease-in-out;
+	animation	: barberpole 12s linear infinite;
+
+	border-radius: 100px;
+	
+	position : absolute;
+	left : 203px;
+	top  : 5px;
+}
+
+.CompressProgressBar.Upload {
+	background-image: repeating-linear-gradient(-63deg, #5763b0, #5763b0 7px, #6791DE 7px, #6791DE 18px);
+}
+
+.CompressProgressBar.Compressing {
+	background-image: repeating-linear-gradient(-63deg, #57b0af, #57b0af 7px, #69E5E3 7px, #69E5E3 18px);
+}
+
+.CompressProgressBar.Compressdone {
+	background-color : #57B0AF;
+}
+
+.CompressProgressBar.Error {
+	background-color : #B45151;
+}
+
+.HideItems {
+	 display : none;
+}
